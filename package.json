@@ -1,0 +1,19 @@
+{
+  "name": "x-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.1.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
