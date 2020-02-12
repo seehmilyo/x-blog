@@ -7,12 +7,23 @@ import axios from 'axios'
 
 //axios的Promise用法
 export function $axios(config) {
-  //创建axios实例
-  const instance = axios.create({
+  let instance = axios.create({
     //定义默认配置
-    baseURL: 'http://123.207.32.32:8000',
+    baseURL: 'http://localhost:8000',
+    // baseURL: 'http://123.207.32.32:8000',
     timeout: 5000
   })
+  // console.log(config);
+  if (config.url.includes('multidata')) {
+    //创建axios实例
+     instance = axios.create({
+      //定义默认配置
+      // baseURL: 'http://localhost:8000',
+      baseURL: 'http://123.207.32.32:8000',
+      timeout: 5000
+    })
+  }
+
 
   //拦截器
   //实例拦截
@@ -24,7 +35,12 @@ export function $axios(config) {
     console.log(error);
   })
 
-  // instance.interceptors.request.use()
+  instance.interceptors.response.use(res => {
+    // console.log(res.data);
+    return res
+  }, error => {
+    console.log(error);
+  })
 
 
 

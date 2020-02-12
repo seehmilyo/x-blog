@@ -6,7 +6,7 @@ import getters from './getters'
 import moduleA from './modules/moduleA'
 Vue.use(Vuex)
 const state = {
-  message:'首页123'
+  articleObj:null
 }
 
 const store = new Vuex.Store({
