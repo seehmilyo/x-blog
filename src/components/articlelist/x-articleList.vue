@@ -93,7 +93,7 @@
 <style lang="less" scoped>
   //@imgWidth:
   .body{
-    margin: 1.5rem 0.5rem;
+    margin: .5rem 0.5rem;
     /*border: black 1px solid;*/
     background-color: rgba(100,100,100,0.05);
     border-top:  rgba(0, 0, 0, 0.2) 1px solid;
@@ -160,4 +160,6 @@
       -webkit-box-orient:vertical; //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
       -webkit-line-clamp:3;//这个属性不是css的规范属性，需要组合上面两个属性，表示显示的行数。
     }
+
+
 </style>

@@ -16,8 +16,7 @@
     name: 'app',
     components: {
       tabbar,
-
-    }
+    },
   }
 </script>
 

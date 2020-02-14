@@ -9,12 +9,16 @@
 <!--    <span>其他</span>-->
 <!--    {{this.$store.state.home.moduleId}}-->
   </x-catalog-bar>
-  <article-list :datas="data"/>
+    <article-list :datas="data"/>
   </div>
 </template>
 
 <script>
+
   import {getHome} from "../../../network/home"
+
+
+
   import xCatalogBar from '@/components/catalogbar/x-catalogBar'
   import articleList from './articleList'
   export default {
@@ -96,10 +100,12 @@
           // }]
         }
 
+        this.$emit('refreshScroll')
       },
 
     },
     created() {
+
       this.$store.dispatch('getAllArticle')
       getHome()
         .then(res => {
@@ -111,6 +117,18 @@
           console.log(err);
         })
 
+    },
+    mounted() {
+      //使内部的原生滚动生效。
+      //获取滚动元素
+      let setScroll = document.querySelector('.option')
+      // // console.log(setScroll);
+      // setScroll.addEventListener('wheel', (e) => {
+      //   e.stopPropagation();
+      // })
+        setScroll.addEventListener('touchstart', (e) => {
+          e.stopPropagation();
+        })
     }
 
   }

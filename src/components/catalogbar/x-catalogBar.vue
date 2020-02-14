@@ -12,7 +12,6 @@
 </script>
 
 <style lang="less" scoped>
-
   .x-catalogBar{
     z-index: 2;
     /*display: flex;*/
@@ -20,6 +19,8 @@
     height: 1.3rem;
     padding: 5px 0 15px 10px;
     font-size: 1.3rem;
+
+    /**在better-scroll中失效**/
     position: sticky;
     top: 39px;
     .text{
