@@ -6,7 +6,9 @@ import getters from './getters'
 import moduleA from './modules/moduleA'
 Vue.use(Vuex)
 const state = {
-  articleObj:null
+  articleObj:null,
+  articleObjList:null,
+  currentIndex:99
 }
 
 const store = new Vuex.Store({
@@ -20,7 +22,7 @@ const store = new Vuex.Store({
   //通过context.commit('时间type')对mutations进行操作
   actions,
 
-  //类似于methods，参数有（state，getters）
+  //类似于computed，参数有（state，getters）
   getters,
   modules:{
     //子模块中的state会被提取到store中的state

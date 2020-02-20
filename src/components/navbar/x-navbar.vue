@@ -1,5 +1,5 @@
 <template>
-  <div style="position: fixed; z-index: 1; width: 100%">
+  <div class="navBar" style=" z-index: 1; width: 100%">
   <div class="x-navbar">
   <div class="left"><slot name="left"><i class="fa fa-chevron-left"></i></slot></div>
   <div class="center"><slot>首页</slot></div>

@@ -19,10 +19,10 @@
     height: 1.3rem;
     padding: 5px 0 15px 10px;
     font-size: 1.3rem;
-
+    position: fixed;
     /**在better-scroll中失效**/
-    position: sticky;
-    top: 39px;
+    /*position: sticky;*/
+    /*top: 39px;*/
     .text{
       font-weight: 700;
       position: absolute;
