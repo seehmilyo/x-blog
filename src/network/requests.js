@@ -9,7 +9,8 @@ import axios from 'axios'
 export function $axios(config) {
   let instance = axios.create({
     //定义默认配置
-    baseURL: 'http://localhost:8000',
+    // baseURL: 'http://localhost:8000',
+    baseURL: 'http://106.15.195.12:8000',
     // baseURL: 'http://123.207.32.32:8000',
     timeout: 5000
   })

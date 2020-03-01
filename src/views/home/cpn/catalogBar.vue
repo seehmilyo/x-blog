@@ -1,6 +1,6 @@
 <template>
   <div>
-  <x-catalog-bar>
+  <x-catalog-bar ref="xCatalog">
     <span v-for="(item, index) in textArr" :class="{active:$store.state.currentIndex === index}" @click="catalogClick(index, item.id)">{{item.txt}}</span>
 <!--    <span>三剑客</span>-->
 <!--    <span>Vue</span>-->
@@ -9,8 +9,8 @@
 <!--    <span>其他</span>-->
 <!--    {{this.$store.state.home.moduleId}}-->
   </x-catalog-bar>
-    <div class="filler" style="height: 2.05rem"></div>
     <article-list :datas="data"/>
+        <div class="filler" style="height: 6rem"></div>
   </div>
 </template>
 
@@ -47,7 +47,7 @@
       }
     },
     methods:{
-      catalogClick(index, id){
+      catalogClick(index, id) {
         // this.currentIndex = index
         this.$store.commit('changeCurrentIndex', {index, id})
         // console.log(id);
@@ -95,11 +95,10 @@
         (function () {
           timer = setTimeout(function () {
             _this.$emit('refreshScroll')
-          },200)
+          }, 200)
         })()
 
-      },
-
+      }
     },
     created() {
       this.$store.dispatch('getAllArticle')

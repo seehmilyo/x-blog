@@ -1,15 +1,10 @@
 <template>
-  <div>learn</div>
-  <quill-editor></quill-editor>
+  <h2>learn</h2>
 </template>
 
 <script>
-  import quillEditor from '@/components/Quill'
   export default {
-    name: "learn",
-    components:{
-      quillEditor
-    }
+    name: "learn"
   }
 </script>
 

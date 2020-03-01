@@ -1,17 +1,15 @@
 <template>
   <div>
+<!--    刷新的效果-->
+    <div class="refreshDiv" :style="{display:changeStyle}">
+      <div class="i"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+      <!--        <span class="sr-only">Loading...</span>-->
+    </div>
     <nav-bar>
       文章详情
       <div slot="right"><i @click="cRefresh" class="fa fa-refresh"></i></div>
     </nav-bar>
-    <div>
-      <div class="refreshDiv" :style="{display:changeStyle}">
-        <div class="i"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
-
-<!--        <span class="sr-only">Loading...</span>-->
-      </div>
-      {{art}}
-    </div>
+    <div v-html="">art{{art}}</div>
   </div>
 </template>
 
@@ -94,6 +92,7 @@
 </script>
 
 <style lang="less" scoped>
+  @import "../../assets/css/base.css";
   .refreshDiv{
     display: none;
     position: fixed;

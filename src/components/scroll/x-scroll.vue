@@ -36,6 +36,9 @@
       refresh(){
         this.scroll.refresh()
       },
+      stop(){
+        this.scroll.stop()
+      },
       // 下拉完场（数据请求完成之后调用）
       finishPullDown(){
         this.scroll.finishPullDown()

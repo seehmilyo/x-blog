@@ -4,13 +4,13 @@ import router from './router/index'
 import store from './store/index'
 import './assets/css/base.css'
 
-// import Vue from 'vue'
+//全局引入quill的样式，使其在文章详情页面可以正常显示
 import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
-
 Vue.use(VueQuillEditor)
+
 Vue.prototype.$bus = new Vue()
 Vue.config.productionTip = false
 

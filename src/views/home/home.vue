@@ -6,14 +6,14 @@
     </x-catalog-bar>
 
     <scroll ref="scroll"
-            :pullDownRefresh="{threshold:50,stop:0}"
+            :pullDownRefresh="{threshold:30,stop:0}"
             :pullUpLoad="true"
             @scroll="scroll"
             @pullingDown="pullingDown"
             @pullingUp="pullingUp">
 <!--    <div style="padding-top: 44px;">-->
     <swiper  v-if="datas" :sliderList="datas.data.data.banner.list"></swiper>
-    <catalog-bar @refreshScroll="refreshScroll"  :dataa="dataList"></catalog-bar>
+    <catalog-bar @refreshScroll="refreshScroll"></catalog-bar>
 <!--    </div>-->
 
     </scroll>
@@ -69,15 +69,16 @@
       },
 
       scroll(position){
-        console.log(position);
-
-        if (position.y <= -198) this.isShowCatalogBar = true
-        else this.isShowCatalogBar = false
-        // this.$refs.scroll.stop();
+        // console.log(position);
+        // if(position.y <= -198) this.isShowCatalogBar = true
+        // else this.isShowCatalogBar = false
+        this.isShowCatalogBar = position.y <= -198 ? true : 0
       },
       pullingUp(_this){
         // console.log(document.querySelector('.wrapper'))
         console.log('上拉加载');
+        // this.$refs.scroll.refresh()
+        // this.$refs.scroll.finish
         this.$nextTick(() => {
           // console.log(this.$refs.scroll);
         })
@@ -105,8 +106,13 @@
 </script>
 
 <style scoped>
+  @import "../../assets/css/base.css";
   .active{
     color:rgba(253, 0, 1, 0.7);
     border-bottom: 0.5rem solid;
+  }
+  .x-catalogBar{
+    /*//利用fixed实现吸顶效果*/
+    position: fixed;
   }
 </style>
