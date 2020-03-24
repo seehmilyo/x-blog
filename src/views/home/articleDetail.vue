@@ -9,7 +9,12 @@
       文章详情
       <div slot="right"><i @click="cRefresh" class="fa fa-refresh"></i></div>
     </nav-bar>
-    <div v-html="">art{{art}}</div>
+    <!-- <div v-html="article">{{article}}</div> -->
+		<h3 style="font-size: 20px;">{{article.title}}</h3>
+		<div class="timeMessage"><i class="fa fa-clock-o"></i>&nbsp;{{article.time}}</div>
+		<div class="">{{article.author}}</div>
+		<div class="fuller" style="border-top: #999999 1px solid;width: 90%;margin:5px 5% 15px"></div>
+		<div class="content" v-html="article.content"></div>
   </div>
 </template>
 
@@ -24,7 +29,7 @@
     components:{
       navBar
     },
-
+						
     computed:{
       // changeStyle:{
       //   get:function () {
@@ -58,7 +63,7 @@
         // // })
         // return this.$route.params.id //参数id和router.js中的 path/:id(参数)一致
       },
-      art(){
+      article(){
        // let aid = this.$route.query.articleId
         let aid = this.articleId
         let data = this.$store.state.articleObj.all;
@@ -87,12 +92,20 @@
         },400)
 
       }
-    }
+    },
+		
   }
 </script>
 
 <style lang="less" scoped>
   @import "../../assets/css/base.css";
+	.timeMessage{
+		height: 2rem;
+		line-height: 2rem;
+		width: 100%;
+		color: darkgray;
+		font-size: 0.8rem;
+	}
   .refreshDiv{
     display: none;
     position: fixed;

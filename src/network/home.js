@@ -8,6 +8,6 @@ export function getHomeSwiper() {
 
 export function getHome() {
   return  $axios({
-    url:'/home/dataLists'
+    url:'/api/home/dataLists'
   })
 }

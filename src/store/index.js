@@ -8,7 +8,13 @@ Vue.use(Vuex)
 const state = {
   articleObj:null,
   articleObjList:null,
-  currentIndex:99
+  currentIndex:99,
+	catalogText:[{id:'jhc',txt:'三剑客'},
+							 { id:'vue',txt:'Vue'},
+							 {id:'node',txt:'node'},
+							 {id:'python',txt:'python'},
+							 {id:'others',txt:'其他'},
+							]
 }
 
 const store = new Vuex.Store({

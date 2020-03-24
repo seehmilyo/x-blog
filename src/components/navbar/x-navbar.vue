@@ -1,7 +1,7 @@
 <template>
   <div class="navBar" style=" z-index: 1; width: 100%">
   <div class="x-navbar">
-  <div class="left"><slot name="left"><i class="fa fa-chevron-left"></i></slot></div>
+  <div class="left" @click="goBack"><slot name="left"><i class="fa fa-chevron-left"></i></slot></div>
   <div class="center"><slot>首页</slot></div>
   <div class="right"><slot name="right"><i class="fa fa-link"></i></slot></div>
   </div>
@@ -10,7 +10,12 @@
 
 <script>
   export default {
-    name: "x-navbar"
+    name: "x-navbar",
+		methods:{
+			goBack(){
+				this.$router.go(-1)
+			}
+		}
   }
 </script>
 

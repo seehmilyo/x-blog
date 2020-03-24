@@ -10,8 +10,8 @@ export function $axios(config) {
   let instance = axios.create({
     //定义默认配置
     // baseURL: 'http://localhost:8000',
-    baseURL: 'http://106.15.195.12:8000',
-    // baseURL: 'http://123.207.32.32:8000',
+    // baseURL: 'http://106.15.195.12:8000',
+    // baseURL:'/',
     timeout: 5000
   })
   // console.log(config);
@@ -46,15 +46,16 @@ export function $axios(config) {
 
 
   //Promise的axios的用法
-  return new Promise((resolve, reject) =>{
-    instance(config)
-      .then(res =>{
-        resolve(res)
-      })
-      .catch(err =>{
-        reject(err)
-      })
-  })
+  // return new Promise((resolve, reject) =>{
+  //   instance(config)
+  //     .then(res =>{
+  //       resolve(res)
+  //     })
+  //     .catch(err =>{
+  //       reject(err)
+  //     })
+  // })
+  return instance(config)
 }
 
 

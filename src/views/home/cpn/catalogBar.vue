@@ -30,11 +30,7 @@
     },
     data(){return{
       currentIndex:this.$store.state.currentIndex,
-      textArr:[{id:'jhc',txt:'三剑客'},
-        { id:'vue',txt:'Vue'},
-        {id:'node',txt:'node'},
-        {id:'python',txt:'python'},
-        {id:'others',txt:'其他'}]
+      textArr:this.$store.state.catalogText
     }},
     computed:{
       data:{

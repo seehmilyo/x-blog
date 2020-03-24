@@ -2,7 +2,7 @@
   <div class="home">
     <nav-bar/>
     <x-catalog-bar v-show="isShowCatalogBar" class="activeCatalogBar">
-      <span v-for="(item, index) in textArr" :class="{active:$store.state.currentIndex === index}" @click="catalogClick(index, item.id)">{{item.txt}}</span>
+      <span v-for="(item, index) in textArr" :key="index" :class="{active:$store.state.currentIndex === index}" @click="catalogClick(index, item.id)">{{item.txt}}</span>
     </x-catalog-bar>
 
     <scroll ref="scroll"

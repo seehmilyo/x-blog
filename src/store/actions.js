@@ -4,7 +4,7 @@ export  default {
   getAllArticle(context){
     getHome()
       .then(res => {
-        // console.log(res.data);
+        console.log(res);
         this.data = res.data.all
         context.commit('getAllArticles',res)
         // console.log(this.dataList)
